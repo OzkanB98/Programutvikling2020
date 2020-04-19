@@ -1,21 +1,21 @@
-package models;
+package models.objects;
 
 import java.io.Serializable;
 
 public class Mus implements Serializable {
-    private MusNavn musNavn;
-    private Pris pris;
+    private String musNavn;
+    private double pris;
 
-    public Mus(MusNavn musNavn, Pris pris) {
+    public Mus(String musNavn, double pris) {
         this.musNavn = musNavn;
         this.pris = pris;
     }
 
-    public MusNavn getMusNavn() {
+    public String getMusNavn() {
         return musNavn;
     }
 
-    public Pris getPris() {
+    public double getPris() {
         return pris;
     }
 }

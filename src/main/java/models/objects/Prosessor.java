@@ -1,21 +1,21 @@
-package models;
+package models.objects;
 
 import java.io.Serializable;
 
 public class Prosessor implements Serializable {
-    private ProsessorNavn prosessorNavn;
-    private Pris pris;
+    private String prosessorNavn;
+    private double pris;
 
-    public Prosessor(ProsessorNavn prosessorNavn, Pris pris) {
+    public Prosessor(String prosessorNavn, double pris) {
         this.prosessorNavn = prosessorNavn;
         this.pris = pris;
     }
 
-    public ProsessorNavn getProsessorNavn() {
+    public String getProsessorNavn() {
         return prosessorNavn;
     }
 
-    public Pris getPris() {
+    public double getPris() {
         return pris;
     }
 }

@@ -1,21 +1,21 @@
-package models;
+package models.objects;
 
 import java.io.Serializable;
 
 public class Skjerm implements Serializable {
-    private SkjermNavn skjermNavn;
-    private Pris pris;
+    private String skjermNavn;
+    private double pris;
 
-    public Skjerm(SkjermNavn skjermNavn, Pris pris) {
+    public Skjerm(String skjermNavn, double pris) {
         this.skjermNavn = skjermNavn;
         this.pris = pris;
     }
 
-    public SkjermNavn getSkjermNavn() {
+    public String getSkjermNavn() {
         return skjermNavn;
     }
 
-    public Pris getPris() {
+    public double getPris() {
         return pris;
     }
 }

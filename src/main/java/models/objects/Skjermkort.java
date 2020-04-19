@@ -1,21 +1,21 @@
-package models;
+package models.objects;
 
 import java.io.Serializable;
 
 public class Skjermkort implements Serializable {
-    private SkjermkortNavn skjermkortNavn;
-    private Pris pris;
+    private String skjermkortNavn;
+    private double pris;
 
-    public Skjermkort(SkjermkortNavn skjermkortNavn, Pris pris) {
+    public Skjermkort(String skjermkortNavn, double pris) {
         this.skjermkortNavn = skjermkortNavn;
         this.pris = pris;
     }
 
-    public SkjermkortNavn getSkjermkortNavn() {
+    public String getSkjermkortNavn() {
         return skjermkortNavn;
     }
 
-    public Pris getPris() {
+    public double getPris() {
         return pris;
     }
 }
