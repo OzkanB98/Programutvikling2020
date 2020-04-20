@@ -1,4 +1,4 @@
-package models;
+package org.openjfx.models;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
