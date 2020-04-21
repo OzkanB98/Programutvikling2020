@@ -10,9 +10,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("../scene.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/scene.fxml"));
 
         Scene scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("/view/styles.css").toExternalForm());
 
         stage.setTitle("Stasjonær PC");
         stage.setScene(scene);

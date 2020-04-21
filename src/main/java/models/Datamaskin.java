@@ -1,4 +1,4 @@
 package org.openjfx.models;
 
-public class Datamaskin  {
+public class Datamaskin {
 }
