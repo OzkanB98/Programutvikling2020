@@ -1,4 +1,4 @@
-package org.openjfx.models.objects;
+package models.objects;
 
 import java.io.Serializable;
 
