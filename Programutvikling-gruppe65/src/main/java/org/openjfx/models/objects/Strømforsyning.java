@@ -1,25 +1,15 @@
-package models.objects;
+package org.openjfx.models.objects;
 
-public class Strømforsyning {
-    private String strømforsyningNavn;
+import org.openjfx.models.Komponent;
+
+import java.io.Serializable;
+
+public class Strømforsyning extends Komponent implements Serializable {
     private String strømforsyningWatt;
-    private double strømforsyningPris;
 
-    public Strømforsyning(String strømforsyningNavn, String strømforsyningWatt, double strømforsyningPris) {
-        this.strømforsyningNavn = strømforsyningNavn;
+    public Strømforsyning(String merke, String modell, double pris, String strømforsyningWatt) {
+        super(merke, modell, pris);
         this.strømforsyningWatt = strømforsyningWatt;
-        this.strømforsyningPris = strømforsyningPris;
     }
 
-    public String getStrømforsyningNavn() {
-        return strømforsyningNavn;
-    }
-
-    public String getStrømforsyningWatt() {
-        return strømforsyningWatt;
-    }
-
-    public double getStrømforsyningPris() {
-        return strømforsyningPris;
-    }
 }

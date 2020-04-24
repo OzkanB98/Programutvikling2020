@@ -1,21 +1,13 @@
-package models.objects;
+package org.openjfx.models.objects;
+
+import org.openjfx.models.Komponent;
 
 import java.io.Serializable;
 
-public class Skjerm implements Serializable {
-    private String skjermNavn;
-    private double pris;
+public class Skjerm extends Komponent implements Serializable {
 
-    public Skjerm(String skjermNavn, double pris) {
-        this.skjermNavn = skjermNavn;
-        this.pris = pris;
+    public Skjerm(String merke, String modell, double pris) {
+        super(merke, modell, pris);
     }
 
-    public String getSkjermNavn() {
-        return skjermNavn;
-    }
-
-    public double getPris() {
-        return pris;
-    }
 }

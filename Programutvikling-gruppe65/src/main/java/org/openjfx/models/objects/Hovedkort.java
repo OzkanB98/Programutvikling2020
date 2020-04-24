@@ -1,21 +1,15 @@
-package models.objects;
+package org.openjfx.models.objects;
+
+import org.openjfx.models.Komponent;
 
 import java.io.Serializable;
 
-public class Hovedkort implements Serializable {
-    private String hovedkortNavn;
-    private double hovedkortPris;
+public class Hovedkort extends Komponent implements Serializable {
+    private String hovedkortType; // AMD eller Intel
 
-    public Hovedkort(String hovedkortNavn, double hovedkortPris) {
-        this.hovedkortNavn = hovedkortNavn;
-        this.hovedkortPris = hovedkortPris;
+    public Hovedkort(String merke, String modell, double pris, String hovedkortType) {
+        super(merke, modell, pris);
+        this.hovedkortType = hovedkortType;
     }
 
-    public String getHovedkortNavn() {
-        return hovedkortNavn;
-    }
-
-    public double getHovedkortPris() {
-        return hovedkortPris;
-    }
 }

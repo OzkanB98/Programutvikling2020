@@ -8,7 +8,7 @@
    <children>
       <Text layoutX="27.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tilpass din nye PC">
          <font>
-            <Font size="25.0" />
+            <Font size="23.0" />
          </font>
       </Text>
       <Text layoutX="313.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ekstra utstyr">

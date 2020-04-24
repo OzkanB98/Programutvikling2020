@@ -1,27 +1,15 @@
-package models.objects;
+package org.openjfx.models.objects;
+
+import org.openjfx.models.Komponent;
 
 import java.io.Serializable;
 
-public class Ram implements Serializable {
-    private String ramNavn;
+public class Ram extends Komponent implements Serializable {
     private String ramStørrelse;
-    private double pris;
 
-    public Ram(String ramNavn, String ramStørrelse, double pris) {
-        this.ramNavn = ramNavn;
+    public Ram(String merke, String modell, double pris, String ramStørrelse) {
+        super(merke, modell, pris);
         this.ramStørrelse = ramStørrelse;
-        this.pris = pris;
     }
 
-    public String getRamNavn() {
-        return ramNavn;
-    }
-
-    public String getRamStørrelse() {
-        return ramStørrelse;
-    }
-
-    public double getPris() {
-        return pris;
-    }
 }
