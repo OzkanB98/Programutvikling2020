@@ -1,21 +1,13 @@
-package models.objects;
+package org.openjfx.models.objects;
+
+import org.openjfx.models.Komponent;
 
 import java.io.Serializable;
 
-public class Mus implements Serializable {
-    private String musNavn;
-    private double pris;
+public class Mus extends Komponent implements Serializable {
 
-    public Mus(String musNavn, double pris) {
-        this.musNavn = musNavn;
-        this.pris = pris;
+    public Mus(String merke, String modell, double pris) {
+        super(merke, modell, pris);
     }
 
-    public String getMusNavn() {
-        return musNavn;
-    }
-
-    public double getPris() {
-        return pris;
-    }
 }

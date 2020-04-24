@@ -1,21 +1,13 @@
-package models.objects;
+package org.openjfx.models.objects;
+
+import org.openjfx.models.Komponent;
 
 import java.io.Serializable;
 
-public class Tastatur implements Serializable {
-    private String tastaturNavn;
-    private double pris;
+public class Tastatur extends Komponent implements Serializable {
 
-    public Tastatur(String tastaturNavn, double pris) {
-        this.tastaturNavn = tastaturNavn;
-        this.pris = pris;
+    public Tastatur(String merke, String modell, double pris) {
+        super(merke, modell, pris);
     }
 
-    public String getTastaturNavn() {
-        return tastaturNavn;
-    }
-
-    public double getPris() {
-        return pris;
-    }
 }

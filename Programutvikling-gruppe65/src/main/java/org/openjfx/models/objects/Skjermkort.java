@@ -1,21 +1,13 @@
-package models.objects;
+package org.openjfx.models.objects;
+
+import org.openjfx.models.Komponent;
 
 import java.io.Serializable;
 
-public class Skjermkort implements Serializable {
-    private String skjermkortNavn;
-    private double pris;
+public class Skjermkort extends Komponent implements Serializable {
 
-    public Skjermkort(String skjermkortNavn, double pris) {
-        this.skjermkortNavn = skjermkortNavn;
-        this.pris = pris;
+    public Skjermkort(String merke, String modell, double pris) {
+        super(merke, modell, pris);
     }
 
-    public String getSkjermkortNavn() {
-        return skjermkortNavn;
-    }
-
-    public double getPris() {
-        return pris;
-    }
 }
