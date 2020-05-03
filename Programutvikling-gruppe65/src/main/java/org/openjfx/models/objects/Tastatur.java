@@ -6,8 +6,17 @@ import java.io.Serializable;
 
 public class Tastatur extends Komponent implements Serializable {
 
-    public Tastatur(String merke, String modell, double pris) {
-        super(merke, modell, pris);
-    }
+    private String layout; //nordisk,..
+    private String teknologi; //mekanisk, membran
+    private String overføring; //kablet, trådløs
+    private String bakbelysning;
 
+
+    public Tastatur(String merke, String type, double pris, String layout, String teknologi, String overføring, String bakbelysning) {
+        super(merke, type, pris);
+        this.layout = layout;
+        this.teknologi = teknologi;
+        this.overføring = overføring;
+        this.bakbelysning = bakbelysning;
+    }
 }

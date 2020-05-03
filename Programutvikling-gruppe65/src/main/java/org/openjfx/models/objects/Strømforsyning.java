@@ -5,11 +5,12 @@ import org.openjfx.models.Komponent;
 import java.io.Serializable;
 
 public class Strømforsyning extends Komponent implements Serializable {
-    private String strømforsyningWatt;
+    private short effekt;
+    private String koblingstype;
 
-    public Strømforsyning(String merke, String modell, double pris, String strømforsyningWatt) {
-        super(merke, modell, pris);
-        this.strømforsyningWatt = strømforsyningWatt;
+    public Strømforsyning(String merke, String type, double pris, short effekt, String koblingstype) {
+        super(merke, type, pris);
+        this.effekt = effekt;
+        this.koblingstype = koblingstype;
     }
-
 }

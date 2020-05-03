@@ -6,8 +6,14 @@ import java.io.Serializable;
 
 public class Skjerm extends Komponent implements Serializable {
 
-    public Skjerm(String merke, String modell, double pris) {
-        super(merke, modell, pris);
-    }
+    private short skjermstørrelse;
+    private short antallHz;
+    private String standardOppløsning;
 
+    public Skjerm(String merke, String type, double pris, short skjermstørrelse, short antallHz, String standardOppløsning) {
+        super(merke, type, pris);
+        this.skjermstørrelse = skjermstørrelse;
+        this.antallHz = antallHz;
+        this.standardOppløsning = standardOppløsning;
+    }
 }

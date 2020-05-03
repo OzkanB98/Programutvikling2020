@@ -6,8 +6,16 @@ import java.io.Serializable;
 
 public class Mus extends Komponent implements Serializable {
 
-    public Mus(String merke, String modell, double pris) {
-        super(merke, modell, pris);
-    }
+    private String overføring;
+    private String grensesnitt;
+    private String sensor;
+    private short dpi;
 
+    public Mus(String merke, String type, double pris, String overføring, String grensesnitt, String sensor, short dpi) {
+        super(merke, type, pris);
+        this.overføring = overføring;
+        this.grensesnitt = grensesnitt;
+        this.sensor = sensor;
+        this.dpi = dpi;
+    }
 }
