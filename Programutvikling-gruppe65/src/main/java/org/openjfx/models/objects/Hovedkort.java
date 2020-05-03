@@ -3,13 +3,19 @@ package org.openjfx.models.objects;
 import org.openjfx.models.Komponent;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Hovedkort extends Komponent implements Serializable {
-    private String hovedkortType; // AMD eller Intel
+    private String brikkesett;
+    private String sokkel;
+    private String støttetRAM;
+    private ArrayList<String> bussklokke;
 
-    public Hovedkort(String merke, String modell, double pris, String hovedkortType) {
-        super(merke, modell, pris);
-        this.hovedkortType = hovedkortType;
+    public Hovedkort(String merke, String type, double pris, String brikkesett, String sokkel, String støttetRAM, ArrayList<String> bussklokke) {
+        super(merke, type, pris);
+        this.brikkesett = brikkesett;
+        this.sokkel = sokkel;
+        this.støttetRAM = støttetRAM;
+        this.bussklokke = bussklokke;
     }
-
 }

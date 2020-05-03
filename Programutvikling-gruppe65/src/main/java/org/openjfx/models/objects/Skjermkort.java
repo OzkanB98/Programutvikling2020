@@ -6,8 +6,9 @@ import java.io.Serializable;
 
 public class Skjermkort extends Komponent implements Serializable {
 
-    public Skjermkort(String merke, String modell, double pris) {
-        super(merke, modell, pris);
-    }
+    private short minne;
+    private short antallSkjermer;
+    private String fabrikant;
+    private
 
 }
