@@ -5,7 +5,6 @@ import org.openjfx.models.Komponent;
 import java.io.Serializable;
 
 public class Skjerm extends Komponent implements Serializable {
-
     private short skjermstørrelse;
     private short antallHz;
     private String standardOppløsning;

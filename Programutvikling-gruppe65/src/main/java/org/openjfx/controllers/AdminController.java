@@ -1,4 +1,4 @@
-package org.openjfx;
+package org.openjfx.controllers;
 
 public class AdminController {
 }

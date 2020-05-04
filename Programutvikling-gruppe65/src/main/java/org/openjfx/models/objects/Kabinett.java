@@ -6,7 +6,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Kabinett extends Komponent implements Serializable {
-
     private String formfaktor;
     private ArrayList<String> hovedbrett;
 
