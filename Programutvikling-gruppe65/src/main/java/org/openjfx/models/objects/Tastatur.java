@@ -5,11 +5,10 @@ import org.openjfx.models.Komponent;
 import java.io.Serializable;
 
 public class Tastatur extends Komponent implements Serializable {
-
-    private String layout; //nordisk,..
-    private String teknologi; //mekanisk, membran
-    private String overføring; //kablet, trådløs
-    private String bakbelysning;
+    private String layout; // nordisk, engelsk
+    private String teknologi; // mekanisk, membran, mecha-membran
+    private String overføring; // kablet, trådløs
+    private String bakbelysning; // RGB eller statisk farge
 
 
     public Tastatur(String merke, String type, double pris, String layout, String teknologi, String overføring, String bakbelysning) {

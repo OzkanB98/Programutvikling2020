@@ -5,7 +5,6 @@ import org.openjfx.models.Komponent;
 import java.io.Serializable;
 
 public class Mus extends Komponent implements Serializable {
-
     private String overføring;
     private String grensesnitt;
     private String sensor;
