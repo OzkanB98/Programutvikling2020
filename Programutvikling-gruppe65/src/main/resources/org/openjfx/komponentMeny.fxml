@@ -11,9 +11,9 @@
             <Font size="23.0" />
          </font>
       </Text>
-      <Text layoutX="313.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ekstra utstyr">
+      <Text layoutX="309.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valgfritt tilleggsutstyr">
          <font>
-            <Font size="17.0" />
+            <Font size="23.0" />
          </font>
       </Text>
       <Button defaultButton="true" layoutX="480.0" layoutY="359.0" mnemonicParsing="false" text="Gå til handlekurv" />
@@ -41,12 +41,22 @@
             </Label>
             <Label prefHeight="38.0" prefWidth="206.0">
                <graphic>
-                  <Hyperlink text="Velg harddisk" />
+                  <Hyperlink text="Velg lagring" />
                </graphic>
             </Label>
             <Label prefHeight="38.0" prefWidth="206.0">
                <graphic>
-                  <Hyperlink text="Velg RAM/minne" />
+                  <Hyperlink text="Velg kjøling" />
+               </graphic>
+            </Label>
+            <Label prefHeight="38.0" prefWidth="206.0">
+               <graphic>
+                  <Hyperlink text="Velg RAM" />
+               </graphic>
+            </Label>
+            <Label prefHeight="38.0" prefWidth="206.0">
+               <graphic>
+                  <Hyperlink text="Velg kabinett" />
                </graphic>
             </Label>
          </children>
