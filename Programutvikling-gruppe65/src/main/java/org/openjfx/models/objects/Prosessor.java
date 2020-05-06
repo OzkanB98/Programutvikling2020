@@ -4,7 +4,7 @@ import org.openjfx.models.Komponent;
 
 import java.io.Serializable;
 
-public class Prosessor extends Komponent implements Serializable {
+public class Prosessor extends Komponent {
     private short kjerner; // AMD eller Intel
     private short strenger;
     private double hastighet;

@@ -5,7 +5,7 @@ import org.openjfx.models.Komponent;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Hovedkort extends Komponent implements Serializable {
+public class Hovedkort extends Komponent {
     private String brikkesett;
     private String sokkel;
     private String støttetRAM;

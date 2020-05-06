@@ -4,7 +4,7 @@ import org.openjfx.models.Komponent;
 
 import java.io.Serializable;
 
-public class Ram extends Komponent implements Serializable {
+public class Ram extends Komponent {
     private String ramStørrelse;
     private short hastighet;
     private String teknologi; // DDR3, DDR4 osv

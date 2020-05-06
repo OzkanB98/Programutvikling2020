@@ -5,7 +5,7 @@ import org.openjfx.models.Komponent;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Kabinett extends Komponent implements Serializable {
+public class Kabinett extends Komponent {
     private String formfaktor;
     private ArrayList<String> hovedbrett;
 

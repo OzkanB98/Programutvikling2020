@@ -4,7 +4,7 @@ import org.openjfx.models.Komponent;
 
 import java.io.Serializable;
 
-public class Tastatur extends Komponent implements Serializable {
+public class Tastatur extends Komponent {
     private String layout; // nordisk, engelsk
     private String teknologi; // mekanisk, membran, mecha-membran
     private String overføring; // kablet, trådløs

@@ -4,7 +4,7 @@ import org.openjfx.models.Komponent;
 
 import java.io.Serializable;
 
-public class Skjermkort extends Komponent implements Serializable {
+public class Skjermkort extends Komponent {
     private short minne;
     private short antallSkjermer; // antall innganger
     private String fabrikant; // AMD eller Nvidia

@@ -1,6 +1,8 @@
 package org.openjfx.models;
 
-public abstract class Komponent {
+import java.io.Serializable;
+
+public abstract class Komponent implements Serializable {
     private String merke;
     private String type;
     private double pris;

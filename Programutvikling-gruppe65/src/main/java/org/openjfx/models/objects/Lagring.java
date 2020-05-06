@@ -4,7 +4,7 @@ import org.openjfx.models.Komponent;
 
 import java.io.Serializable;
 
-public class Lagring extends Komponent implements Serializable {
+public class Lagring extends Komponent {
     private String lagringsplass;
     private String lagringsType; // HDD, SSD eller M.2
 

@@ -4,7 +4,7 @@ import org.openjfx.models.Komponent;
 
 import java.io.Serializable;
 
-public class Strømforsyning extends Komponent implements Serializable {
+public class Strømforsyning extends Komponent {
     private short effekt; // Watt
     private String koblingstype;
 
