@@ -2,7 +2,7 @@ package org.openjfx.models;
 
 import java.io.Serializable;
 
-public abstract class Komponent implements Serializable {
+public abstract class Komponent extends TilLagring implements Serializable {
     private String merke;
     private String type;
     private double pris;

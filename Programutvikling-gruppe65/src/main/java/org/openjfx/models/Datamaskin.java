@@ -2,7 +2,7 @@ package org.openjfx.models;
 
 import org.openjfx.models.objects.*;
 
-public class Datamaskin {
+public class Datamaskin extends TilLagring {
     private Hovedkort hovedkort;
     private Kabinett kabinett;
     private Prosessor prosessor;
