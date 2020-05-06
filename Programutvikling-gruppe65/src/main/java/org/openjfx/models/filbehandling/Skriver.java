@@ -1,4 +1,6 @@
-package org.openjfx.models;
+package org.openjfx.models.filbehandling;
+
+import org.openjfx.models.TilLagring;
 
 import java.io.File;
 import java.io.FileNotFoundException;
