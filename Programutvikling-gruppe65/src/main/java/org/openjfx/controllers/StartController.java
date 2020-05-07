@@ -17,7 +17,7 @@ public class StartController {
     private void byttTilAdmin(ActionEvent event) throws IOException {
         /*
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/resources/org/openjfx/Administrator.fxml"));
+        loader.setLocation(getClass().getResource("/resources/org/openjfx/administrator.fxml"));
         Parent root = loader.load();
         Scene adminScene = new Scene(root);
 
@@ -27,7 +27,7 @@ public class StartController {
         window.show();
 
          */
-        App.setRoot("Administrator");
+        App.setRoot("administrator");
     }
 
     @FXML
