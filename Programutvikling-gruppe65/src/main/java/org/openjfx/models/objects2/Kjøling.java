@@ -1,8 +1,6 @@
-package org.openjfx.models.objects;
+package org.openjfx.models.objects2;
 
 import org.openjfx.models.Komponent;
-
-import java.io.Serializable;
 
 public class Kjøling extends Komponent {
 // Type her er vannkjøling eller luftkjøling
