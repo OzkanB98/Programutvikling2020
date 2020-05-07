@@ -6,10 +6,10 @@ import org.openjfx.App;
 
 import java.io.IOException;
 
-public class AdminController {
+public class HandlekurvController {
 
     @FXML
     private void tilbakeKnapp(ActionEvent event) throws IOException {
-        App.setRoot("startside");
+        App.setRoot("komponentMeny");
     }
 }

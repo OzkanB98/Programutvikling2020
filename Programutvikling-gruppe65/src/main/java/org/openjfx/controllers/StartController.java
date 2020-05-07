@@ -29,4 +29,9 @@ public class StartController {
          */
         App.setRoot("Administrator");
     }
+
+    @FXML
+    private void byttTilKomponentMeny(ActionEvent event) throws IOException {
+        App.setRoot("komponentMeny");
+    }
 }

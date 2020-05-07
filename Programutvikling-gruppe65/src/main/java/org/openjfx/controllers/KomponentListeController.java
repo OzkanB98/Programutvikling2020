@@ -6,10 +6,11 @@ import org.openjfx.App;
 
 import java.io.IOException;
 
-public class AdminController {
+public class KomponentListeController {
 
     @FXML
-    private void tilbakeKnapp(ActionEvent event) throws IOException {
-        App.setRoot("startside");
+    private void handleAvbryt(ActionEvent event) throws IOException {
+        App.setRoot("komponentMeny");
     }
+
 }
