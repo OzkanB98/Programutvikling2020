@@ -23,7 +23,7 @@
             <TableColumn prefWidth="155.0" text="Detaljer" />
         </columns>
       </TableView>
-      <Button defaultButton="true" layoutX="510.0" layoutY="402.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="166.0" text="+ Legg til ny komponent" />
+      <Button defaultButton="true" layoutX="510.0" layoutY="402.0" mnemonicParsing="false" onAction="#leggTilKnapp" prefHeight="45.0" prefWidth="166.0" text="+ Legg til ny komponent" />
       <Button layoutX="14.0" layoutY="409.0" mnemonicParsing="false" onAction="#tilbakeKnapp" prefHeight="31.0" prefWidth="95.0" text="Tilbake" />
    </children>
 </AnchorPane>
