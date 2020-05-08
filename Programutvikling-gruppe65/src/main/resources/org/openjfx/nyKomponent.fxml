@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.controllers.NyKomponentController" />
+
+<AnchorPane prefHeight="300.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.controllers.NyKomponentController">
+   <children>
+      <Text layoutX="95.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Legg til en ny komponent" textAlignment="CENTER">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <TextField layoutX="14.0" layoutY="83.0" />
+      <Label layoutX="14.0" layoutY="66.0" text="Merke:" />
+      <Label layoutX="14.0" layoutY="114.0" text="Type:" />
+      <TextField layoutX="14.0" layoutY="131.0" />
+      <Label layoutX="14.0" layoutY="168.0" text="Produktkategori:" />
+      <TextField layoutX="14.0" layoutY="185.0" />
+      <TextArea layoutX="225.0" layoutY="83.0" prefHeight="153.0" prefWidth="200.0" />
+      <Label layoutX="225.0" layoutY="66.0" text="Produktdetaljer:" />
+      <Label layoutX="15.0" layoutY="219.0" text="Pris:" />
+      <TextField layoutX="14.0" layoutY="236.0" prefHeight="25.0" prefWidth="89.0" />
+      <Label layoutX="110.0" layoutY="240.0" text="KR" />
+      <Button defaultButton="true" layoutX="340.0" layoutY="263.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="Legg til" />
+   </children>
+</AnchorPane>
