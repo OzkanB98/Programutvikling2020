@@ -12,11 +12,5 @@ public class JOBJLeser implements Leser {
 
     }
 
-    private void tomFil(File file) throws Exception {
-        if (file.length() == 0){
-            throw new Exception("Filen er tom!");
-        }
-    }
-    
 }
 
