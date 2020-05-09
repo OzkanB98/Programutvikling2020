@@ -6,18 +6,18 @@
 
 <AnchorPane prefHeight="460.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.controllers.AdminController">
    <children>
-      <Text layoutX="244.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Administrer" textAlignment="CENTER" wrappingWidth="201.13671875">
+      <Text layoutX="244.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Administrer" textAlignment="CENTER" wrappingWidth="201.13671875">
          <font>
             <Font size="23.0" />
          </font>
       </Text>
-      <TableView layoutY="45.0" prefHeight="341.0" prefWidth="690.0">
+      <TableView layoutY="45.0" maxHeight="341.0" maxWidth="690.0" prefHeight="341.0" prefWidth="690.0">
         <columns>
-          <TableColumn prefWidth="149.0" text="Merke" />
-            <TableColumn prefWidth="130.0" text="Type" />
-          <TableColumn prefWidth="141.0" text="Kategori" />
-            <TableColumn prefWidth="114.0" text="Detaljer" />
-            <TableColumn prefWidth="155.0" text="Pris" />
+          <TableColumn maxWidth="90.0" minWidth="90.0" prefWidth="90.0" text="Merke" />
+            <TableColumn maxWidth="110.0" minWidth="110.0" prefWidth="110.0" text="Type" />
+          <TableColumn maxWidth="110.0" minWidth="110.0" prefWidth="110.0" text="Kategori" />
+            <TableColumn maxWidth="295.0" minWidth="295.0" prefWidth="295.0" text="Detaljer" />
+            <TableColumn maxWidth="84.0" minWidth="84.0" prefWidth="84.0" text="Pris" />
         </columns>
       </TableView>
       <Button defaultButton="true" layoutX="510.0" layoutY="402.0" mnemonicParsing="false" onAction="#leggTilKnapp" prefHeight="45.0" prefWidth="166.0" text="+ Legg til ny komponent" />
