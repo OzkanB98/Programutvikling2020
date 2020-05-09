@@ -29,14 +29,12 @@ public class inputDataValidering {
         return input;
     }
 
-    /*
-    public void inputFelt(String input) {
-
-        if (input.isEmpty() || input.isBlank()) {
-            System.out.println("Alle inputfelt må fylles ut!");
+    public String validerKategoriVelger(String input) throws IllegalArgumentException{
+        if(input.equals("Velg kategori")){
+            throw new IllegalArgumentException("Vennligst velg en produktkategori");
         }
+        return input;
     }
-     */
 
 
 }
