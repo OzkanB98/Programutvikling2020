@@ -22,31 +22,28 @@ public class inputDataValidering {
         return input;
     }
 
-
     public String forLangTekst(String input, String tekstFelt) throws NullPointerException, IllegalArgumentException {
 
         if (input.length() < 30) {
             throw new IllegalArgumentException("Vennligst skriv et kortere navn i tekstfeltet for " + tekstFelt);
         }
+        return input;
     }
 
+    public void validerPris (String input, String tekstFelt) throws NullPointerException, DataFormatException {
+        tomtInputFelt(input);
+        input = input.trim();
 
+        if (!input.matches("[0-9]+(.){0,1}[0-9]+]") || !input.matches("[0-9]+")) {
+            throw new DataFormatException("Pris må skrives i enten heltall eller desimalformat.");
+        }
+    }
 
-            public void validerPris (String input, String tekstFelt) throws NullPointerException, DataFormatException {
-                tomtInputFelt(input);
-                input = input.trim();
-
-                if (!input.matches("[0-9]+(.){0,1}[0-9]+]") || !input.matches("[0-9]+")) {
-                    throw new DataFormatException("Pris må skrives i enten heltall eller desimalformat.");
-                }
-            }
-
-            public String validerKategoriVelger(String input) throws IllegalArgumentException {
-                if (input.equals("Velg kategori")) {
-                    throw new IllegalArgumentException("Vennligst velg en produktkategori");
-                }
-                return input;
-            }
-        
+    public String validerKategoriVelger(String input) throws IllegalArgumentException {
+        if (input.equals("Velg kategori")) {
+            throw new IllegalArgumentException("Vennligst velg en produktkategori");
+        }
+        return input;
+    }
 
 }
