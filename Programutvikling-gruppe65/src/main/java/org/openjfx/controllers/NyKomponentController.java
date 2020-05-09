@@ -20,4 +20,6 @@ public class NyKomponentController {
         kategori.setValue("Velg kategori");
         kategori.setItems(kategorier);
     }
+
+
 }
