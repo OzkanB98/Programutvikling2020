@@ -1,9 +1,5 @@
 package org.openjfx.models.inputValidering;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
-
-import java.util.Scanner;
 import java.util.zip.DataFormatException;
 
 public class inputDataValidering {
@@ -15,28 +11,33 @@ public class inputDataValidering {
         }
     }
 
-    public String sjekkInputFelt(String input, String tekstFelt) throws NullPointerException, DataFormatException {
+    public String validerTekstFelt(String input, String tekstFelt) throws NullPointerException, IllegalArgumentException {
         tomtInputFelt(input);
         input = input.trim();
+        input = forLangTekst(input, tekstFelt);
 
-        char[] charArray = input.toCharArray();
-        for (char character : charArray) {
-            if(!Character.isLetterOrDigit(character) &&
-                    !Character.isSpaceChar(character)) {
-                throw new DataFormatException("Feil inntastet data i tekstfeltet, kan bare være " + tekstFelt);
-            }
+        if (!input.matches("[0-9a-zA-ZäöæøåÄÖÆØÅ]+")) {
+            throw new IllegalArgumentException("Feil format i tekstfeltet for " + tekstFelt + "vennligst bruk bokstaver i det norske alfabetet og tall mellom 0 til 9.");
         }
         return input;
     }
 
-    /*
-    public void inputFelt(String input) {
+    public String forLangTekst(String input, String tekstFelt) throws NullPointerException, IllegalArgumentException {
 
-        if (input.isEmpty() || input.isBlank()) {
-            System.out.println("Alle inputfelt må fylles ut!");
+
+        if (input.length() < 30) {
+            throw new IllegalArgumentException("Vennligst skriv et kortere navn i tekstfeltet for " + tekstFelt);
+        }
+        return input;
+    }
+
+    public void validerPris(String input, String tekstFelt) throws NullPointerException, DataFormatException {
+        tomtInputFelt(input);
+        input = input.trim();
+
+        if (!input.matches("[0-9]+(.){0,1}[0-9]+]" ) || !input.matches("[0-9]+")) {
+            throw new DataFormatException("Pris må skrives i enten heltall eller desimalformat.");
         }
     }
-     */
-
 
 }
