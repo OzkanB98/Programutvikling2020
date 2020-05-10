@@ -2,7 +2,7 @@ package org.openjfx.models;
 
 import java.io.Serializable;
 
-public class Komponent extends TilLagring implements Serializable {
+public class Komponent extends TilLagring {
     private String merke;
     private String type;
     private String produktKategori;

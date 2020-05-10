@@ -1,4 +1,6 @@
 package org.openjfx.models;
 
-public class TilLagring {
+import java.io.Serializable;
+
+public class TilLagring implements Serializable {
 }

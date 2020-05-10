@@ -2,7 +2,7 @@ package org.openjfx.models.inputValidering;
 
 import java.util.zip.DataFormatException;
 
-public class inputDataValidering {
+public class InputDataValidering {
 
     public void tomtInputFelt(String input) throws NullPointerException {
         input = input.trim();
