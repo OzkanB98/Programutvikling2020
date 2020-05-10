@@ -1,4 +1,4 @@
-package org.openjfx.models.inputValidering;
+package org.openjfx.models.datavalidering;
 
 import java.util.zip.DataFormatException;
 
