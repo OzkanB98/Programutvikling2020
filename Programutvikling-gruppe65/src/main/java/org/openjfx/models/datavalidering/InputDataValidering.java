@@ -16,7 +16,7 @@ public class InputDataValidering {
         input = input.trim();
         input = forLangTekst(input, tekstFelt);
 
-        if (!input.matches("[0-9a-zA-ZäöæøåÄÖÆØÅ]+")) {
+        if (!input.matches("[0-9a-zA-ZäöæøåÄÖÆØÅ ]+")) {
             throw new IllegalArgumentException("Feil format i tekstfeltet for " + tekstFelt + "vennligst bruk bokstaver i det norske alfabetet og tall mellom 0 til 9.");
         }
         return input;

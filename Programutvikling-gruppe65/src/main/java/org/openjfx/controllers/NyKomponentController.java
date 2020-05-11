@@ -56,7 +56,7 @@ public class NyKomponentController {
             String kat = kategori.getValue().toString();
 
             Komponent komponent = new Komponent(merke, type, kat, detaljer, pris);
-            File fil = new File("/testfiler/Komponenter.jobj");
+            File fil = new File("Komponenter.jobj");
             filskriver = new JOBJSkriver();
             filskriver.skrivTilFil(fil, komponent);
         }catch (Exception e){
