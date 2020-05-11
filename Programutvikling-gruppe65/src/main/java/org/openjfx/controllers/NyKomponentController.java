@@ -48,6 +48,7 @@ public class NyKomponentController {
     private void leggTilKomponent(Event event) throws IOException, NumberFormatException{
 
         try {
+            sjekkInput();
             String merke = merkeTekstFelt.getText();
             String type = typeTekstFelt.getText();
             Double pris = Double.parseDouble(prisTekstFelt.getText());
@@ -55,21 +56,20 @@ public class NyKomponentController {
             String kat = kategori.getValue().toString();
 
             Komponent komponent = new Komponent(merke, type, kat, detaljer, pris);
-            File fil = new File("/Programutvikling-gruppe65/testfiler/Komponenter.jobj");
+            File fil = new File("/testfiler/Komponenter.jobj");
             filskriver = new JOBJSkriver();
-            filskriver.skrivTilFil(fil, sjekkInput(komponent));
+            filskriver.skrivTilFil(fil, komponent);
         }catch (Exception e){
             e.printStackTrace();
         }
     }
 
-    private Komponent sjekkInput(Komponent k) throws DataFormatException {
-        dataValidering.validerTekstFelt(k.getMerke(), "Merke");
-        dataValidering.validerTekstFelt(k.getType(), "Type");
-        dataValidering.validerKategoriVelger(k.getProduktKategori());
-        dataValidering.validerPris(k.getPris().toString());
-
-        return k;
+    private void sjekkInput() throws DataFormatException, NullPointerException {
+        dataValidering = new InputDataValidering();
+        merkeTekstFelt.setText(dataValidering.validerTekstFelt(merkeTekstFelt.getText(), "Merke"));
+        typeTekstFelt.setText(dataValidering.validerTekstFelt(typeTekstFelt.getText(), "Type"));
+        prisTekstFelt.setText(dataValidering.validerPris(prisTekstFelt.getText()));
+        kategori.setValue(dataValidering.validerKategoriVelger(kategori.getValue().toString()));
     }
 
 

@@ -4,7 +4,7 @@ import java.util.zip.DataFormatException;
 
 public class InputDataValidering {
 
-    public void tomtInputFelt(String input) throws NullPointerException {
+    private void tomtInputFelt(String input) throws NullPointerException {
         input = input.trim();
         if (!(input.length() > 0)) {
             throw new NullPointerException("Alle tekstfelt må fylles ut!");
@@ -24,19 +24,21 @@ public class InputDataValidering {
 
     public String forLangTekst(String input, String tekstFelt) throws NullPointerException, IllegalArgumentException {
 
-        if (input.length() < 30) {
+        if (input.length() > 30) {
             throw new IllegalArgumentException("Vennligst skriv et kortere navn i tekstfeltet for " + tekstFelt);
         }
         return input;
     }
 
-    public void validerPris (String input) throws NullPointerException, DataFormatException {
+    public String validerPris (String input) throws NullPointerException, DataFormatException {
         tomtInputFelt(input);
         input = input.trim();
 
         if (!input.matches("[0-9]+(.){2}+[0-9]+") || !input.matches("[0-9]+")) {
             throw new DataFormatException("Pris må skrives i enten heltall eller desimalformat.");
         }
+
+        return input;
     }
 
     public String validerKategoriVelger(String input) throws IllegalArgumentException {
