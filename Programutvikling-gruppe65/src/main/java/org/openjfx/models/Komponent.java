@@ -1,7 +1,5 @@
 package org.openjfx.models;
 
-import java.io.Serializable;
-
 public class Komponent extends TilLagring {
     private String merke;
     private String type;
@@ -36,4 +34,14 @@ public class Komponent extends TilLagring {
     public Double getPris() { return pris; }
 
     public void setPris(Double pris) { this.pris = pris; }
+
+    public String toString() {
+        return String.format("Produktinformasjon: \n" +
+                "Merke: %s \n" +
+                "Type: %s \n" +
+                "Produktkategori: %s \n" +
+                "Produktdetaljer: %s \n" +
+                "Pris: %s \n",
+                merke, type, produktKategori, produktDetaljer, pris);
+    }
 }

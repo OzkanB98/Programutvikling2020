@@ -11,7 +11,6 @@ public class JOBJSkriver implements Skriver {
 
     @Override
     public void skrivTilFil(File file, TilLagring obj) {
-
         try(ObjectOutputStream out = new ObjectOutputStream((new FileOutputStream(file)))){
             out.writeObject(obj);
             out.flush();
