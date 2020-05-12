@@ -1,9 +1,8 @@
 package org.openjfx.models;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
-public class TilLagring implements Serializable {
+public class Komponenter {
 
     private ArrayList<Komponent> komponentArrayList;
 
