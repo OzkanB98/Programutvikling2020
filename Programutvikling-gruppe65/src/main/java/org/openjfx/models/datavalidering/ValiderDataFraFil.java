@@ -1,6 +1,7 @@
 package org.openjfx.models.datavalidering;
 
 import org.openjfx.models.Komponent;
+import org.openjfx.models.avvik.InvalidKomponentFormatException;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,9 +1,9 @@
-package org.openjfx.models.datavalidering;
+package org.openjfx.models.avvik;
 
 import java.io.IOException;
 
 public class InvalidKomponentFormatException extends IOException {
-    InvalidKomponentFormatException(String message) {
+    public InvalidKomponentFormatException(String message) {
         super(message);
     }
 }

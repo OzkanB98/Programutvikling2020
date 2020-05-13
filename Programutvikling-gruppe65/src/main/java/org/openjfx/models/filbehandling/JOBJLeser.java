@@ -24,7 +24,7 @@ public class JOBJLeser implements Leser {
             objectInputStream.close();
             obj.setKomponentArrayList(komponenter.getKomponentArrayList());
             System.out.println(obj.getKomponentArrayList());
-        }catch(FileNotFoundException fnfe){
+        } catch (FileNotFoundException fnfe){
             System.out.println("Ingen fil funnet");
         }
 
