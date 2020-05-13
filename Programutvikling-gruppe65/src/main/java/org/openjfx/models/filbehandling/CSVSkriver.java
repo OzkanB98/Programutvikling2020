@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 public class CSVSkriver implements Skriver {
 
     @Override
-    public void skrivTilFil(File file, TilLagring obj) throws Exception {
+    public void skrivTilFil(File file, TilLagring obj) {
 
     }
 }

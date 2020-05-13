@@ -7,5 +7,5 @@ import java.io.FileNotFoundException;
 
 public interface Skriver {
 
-    void skrivTilFil(File file, TilLagring obj) throws FileNotFoundException, Exception;
+    void skrivTilFil(File file, TilLagring obj) throws FileNotFoundException;
 }

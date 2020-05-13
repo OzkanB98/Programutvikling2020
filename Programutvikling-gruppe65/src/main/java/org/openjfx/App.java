@@ -7,11 +7,16 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import org.openjfx.models.Komponent;
+import org.openjfx.models.TilLagring;
 import org.openjfx.models.datavalidering.InvalidKomponentFormatException;
 import org.openjfx.models.datavalidering.ValiderDataFraFil;
+import org.openjfx.models.filbehandling.JOBJLeser;
 import org.openjfx.models.filbehandling.JOBJSkriver;
+import org.openjfx.models.filbehandling.Leser;
+import org.openjfx.models.filbehandling.Skriver;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
@@ -40,18 +45,38 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
 
-        ValiderDataFraFil lesFraFil = new ValiderDataFraFil();
+
+        TilLagring komponenter = new TilLagring();
+        Komponent k1 = new Komponent("asus", "gtx 1050", "Skjermkort", "6gb videominne", 2500d);
+        Komponent k2 = new Komponent("msi", "gtx 1060", "Skjermkort", "8gb videominne", 2700d);
+
+        komponenter.getKomponentArrayList().add(k1);
+        komponenter.getKomponentArrayList().add(k2);
+
+
 
         try {
-            List<Komponent> komponentList = lesFraFil.read("Filnavn.csv");
-            System.out.println(komponentList);
-        } catch (InvalidKomponentFormatException e) {
-            new Alert(Alert.AlertType.ERROR, "Data i filen er ikke i riktig format på grunn av følgende: " + e.getMessage());
-        } catch (IOException e) {
-            new Alert(Alert.AlertType.ERROR, "Kan ikke lese innholdet i filen på grunn av følgende: " + e.toString());
+            Skriver skriver = new JOBJSkriver();
+            File file = new File("Komponenter1.jobj");
+            skriver.skrivTilFil(file, komponenter);
+
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
+
+
+
+        try {
+            TilLagring lest = new TilLagring();
+            Leser leser = new JOBJLeser();
+            leser.lesFraFil(new File("Komponenter1.jobj"), lest);
+            System.out.println(lest.getKomponentArrayList());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        launch();
     }
 
 }

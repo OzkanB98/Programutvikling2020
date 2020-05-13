@@ -6,6 +6,9 @@ import java.util.ArrayList;
 public class TilLagring implements Serializable {
 
     private ArrayList<Komponent> komponentArrayList;
+    public TilLagring(){
+        komponentArrayList = new ArrayList<>();
+    }
 
     public ArrayList<Komponent> getKomponentArrayList() {
         return komponentArrayList;

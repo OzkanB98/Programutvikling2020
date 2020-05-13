@@ -22,7 +22,7 @@ public class LastKomponenterTask extends Task<Void> {
     protected Void call() throws Exception {
         Leser lastFil = new JOBJLeser();
         lastFil.lesFraFil(fil, komponenter);
-        Thread.sleep(3000);
+
         return null;
     }
 
