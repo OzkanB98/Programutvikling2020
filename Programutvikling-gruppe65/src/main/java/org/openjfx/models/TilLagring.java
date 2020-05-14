@@ -10,9 +10,6 @@ public class TilLagring implements Serializable {
         komponentArrayList = new ArrayList<>();
     }
 
-    public TilLagring() {
-        this.komponentArrayList = new ArrayList<>();
-    }
 
     public ArrayList<Komponent> getKomponentArrayList() {
         return komponentArrayList;
