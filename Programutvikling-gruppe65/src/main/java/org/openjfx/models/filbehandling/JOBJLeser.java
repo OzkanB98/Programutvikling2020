@@ -1,6 +1,6 @@
 package org.openjfx.models.filbehandling;
 
-import org.openjfx.models.Komponenter;
+
 import org.openjfx.models.TilLagring;
 
 import java.io.*;

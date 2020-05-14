@@ -45,6 +45,7 @@ public class AdminController {
         komponenter = new TilLagring();
         es = Executors.newSingleThreadExecutor();
         es.submit(this::lastInnKomponenter);
+        komponentTableView.refresh();
 
     }
 
