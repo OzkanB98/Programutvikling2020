@@ -30,7 +30,7 @@ public class InputDataValidering {
         return input;
     }
 
-    public String validerPris (String input) throws NullPointerException, DataFormatException {
+    public String validerPris(String input) throws NullPointerException, DataFormatException {
         tomtInputFelt(input);
         input = input.trim();
 

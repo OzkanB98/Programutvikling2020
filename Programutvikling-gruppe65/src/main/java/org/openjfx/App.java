@@ -1,5 +1,9 @@
 package org.openjfx;
 
+import com.opencsv.CSVReader;
+import com.opencsv.CSVWriter;
+import com.opencsv.bean.CsvToBean;
+import com.opencsv.bean.CsvToBeanBuilder;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,16 +12,14 @@ import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import org.openjfx.models.Komponent;
 import org.openjfx.models.TilLagring;
-import org.openjfx.models.datavalidering.InvalidKomponentFormatException;
+import org.openjfx.models.avvik.InvalidKomponentFormatException;
+import org.openjfx.models.datavalidering.CsvValidering;
 import org.openjfx.models.datavalidering.ValiderDataFraFil;
-import org.openjfx.models.filbehandling.JOBJLeser;
-import org.openjfx.models.filbehandling.JOBJSkriver;
-import org.openjfx.models.filbehandling.Leser;
+import org.openjfx.models.filbehandling.CSVLeser;
+import org.openjfx.models.filbehandling.CSVSkriver;
 import org.openjfx.models.filbehandling.Skriver;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.List;
 
 /**
@@ -44,17 +46,39 @@ public class App extends Application {
         return fxmlLoader.load();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+        launch();
+
+        CSVSkriver csvSkriver = new CSVSkriver();
+        TilLagring tilLagring = new TilLagring();
+
+        Komponent komponent = new Komponent("Asus", "GTX1080", "Kategori", "Detaljer", 2500.0);
+        Komponent komponent2 = new Komponent("Asus", "GTX10801", "Kategori", "Detaljer", 2500.0);
+        tilLagring.getKomponentArrayList().add(komponent);
+        tilLagring.getKomponentArrayList().add(komponent2);
+        csvSkriver.skrivTilFil(new File("Komponenter.csv"), tilLagring);
 
 
-        TilLagring komponenter = new TilLagring();
-        Komponent k1 = new Komponent("asus", "gtx 1050", "Skjermkort", "6gb videominne", 2500d);
-        Komponent k2 = new Komponent("msi", "gtx 1060", "Skjermkort", "8gb videominne", 2700d);
+        CSVLeser csvLeser = new CSVLeser();
+        TilLagring tilLagring1 = new TilLagring();
 
-        komponenter.getKomponentArrayList().add(k1);
-        komponenter.getKomponentArrayList().add(k2);
+        csvLeser.lesFraFil(new File("Komponenter.csv"), tilLagring1);
+        System.out.println(tilLagring1.getKomponentArrayList());
+
+    }
+}
 
 
+
+
+
+
+
+
+
+
+        /*
+        ValiderDataFraFil lesFraFil = new ValiderDataFraFil();
 
         try {
             Skriver skriver = new JOBJSkriver();
@@ -65,18 +89,4 @@ public class App extends Application {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
-
-
-        try {
-            TilLagring lest = new TilLagring();
-            Leser leser = new JOBJLeser();
-            leser.lesFraFil(new File("Komponenter1.jobj"), lest);
-            System.out.println(lest.getKomponentArrayList());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        launch();
-    }
-
-}
+         */

@@ -1,10 +1,19 @@
 package org.openjfx.models;
 
-public class Komponent extends TilLagring {
+import com.opencsv.bean.CsvBindByName;
+
+import java.io.Serializable;
+
+public class Komponent extends TilLagring implements Serializable {
+    @CsvBindByName(column = "merke")
     private String merke;
+    @CsvBindByName(column = "type")
     private String type;
+    @CsvBindByName(column = "produktKategori")
     private String produktKategori;
+    @CsvBindByName(column = "produktDetaljer")
     private String produktDetaljer;
+    @CsvBindByName(column = "pris")
     private Double pris;
 
     public Komponent(String merke, String type, String produktKategori, String produktDetaljer, Double pris) {
