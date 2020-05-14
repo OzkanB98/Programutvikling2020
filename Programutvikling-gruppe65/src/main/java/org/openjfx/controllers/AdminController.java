@@ -41,11 +41,15 @@ public class AdminController {
     private TableColumn<Komponent, Double> prisKolonne;
 
 
+    @FXML
     public void initialize(){
+
+        Task<Void> execute = this.lastInnKomponenter();
         komponenter = new TilLagring();
-        es = Executors.newSingleThreadExecutor();
-        es.submit(this::lastInnKomponenter);
+        es = Executors.newFixedThreadPool(3);
+        es.submit(execute);
         komponentTableView.refresh();
+        System.out.println("admincontroller initialisert");
 
     }
 
@@ -73,7 +77,9 @@ public class AdminController {
             liste = FXCollections.observableArrayList(komponenter.getKomponentArrayList());
             handler = new KomponentTableViewHandler(komponentTableView, merkeKolonne, typeKolonne, kategoriKolonne, detaljerKolonne, prisKolonne);
             handler.attachTableView(liste);
+            System.out.println("Task utført");
         });
+        System.out.println("Lastet inn komponenter fra admin controller");
         return task;
     }
 

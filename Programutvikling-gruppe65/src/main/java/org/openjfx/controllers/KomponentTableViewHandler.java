@@ -3,6 +3,7 @@ package org.openjfx.controllers;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import org.openjfx.models.Komponent;
 
 public class KomponentTableViewHandler {
@@ -22,11 +23,31 @@ public class KomponentTableViewHandler {
         this.kategoriStringTableColumn = kategoriStringTableColumn;
         this.detaljerStringTableColumn = detaljerStringTableColumn;
         this.prisDoubleTableColumn = prisDoubleTableColumn;
+        settOppTableView();
+    }
+
+    private void settOppTableView(){
+        komponentTableView.getColumns().setAll(merkeStringTableColumn, typeStringTableColumn, kategoriStringTableColumn, detaljerStringTableColumn, prisDoubleTableColumn);
+        settOppKolonner();
+    }
+
+    private void settOppKolonner(){
+        cellValueFactory(merkeStringTableColumn, "merke");
+        cellValueFactory(typeStringTableColumn, "type");
+        cellValueFactory(kategoriStringTableColumn, "produktKategori");
+        cellValueFactory(detaljerStringTableColumn, "produktDetaljer");
+        prisDoubleTableColumn.setCellValueFactory(new PropertyValueFactory<>("pris"));
+        System.out.println("Setter cell value factory fra tableViewHandler");
+    }
+
+    private void cellValueFactory(TableColumn<Komponent, String> kolonne, String value){
+        kolonne.setCellValueFactory(new PropertyValueFactory<>(value));
     }
 
     public void attachTableView(ObservableList<Komponent> list){
         komponentTableView.setItems(list);
     }
+
 
 
 }

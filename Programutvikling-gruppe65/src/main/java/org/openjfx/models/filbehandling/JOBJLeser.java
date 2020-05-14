@@ -11,7 +11,7 @@ public class JOBJLeser implements Leser {
     @Override
     public void lesFraFil(File file, TilLagring obj) throws Exception {
 
-        obj.setKomponentArrayList(new ArrayList<>());
+        obj = new TilLagring();
         if(file.length() == 0){
             throw new FileNotFoundException("Ingen data funnet");
         }

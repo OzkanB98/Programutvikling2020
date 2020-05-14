@@ -27,6 +27,7 @@ public class StartController {
         window.show();
 
          */
+
         App.setRoot("administrator");
     }
 

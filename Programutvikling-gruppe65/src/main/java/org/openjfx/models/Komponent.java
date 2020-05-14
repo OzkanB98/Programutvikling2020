@@ -6,6 +6,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Komponent extends TilLagring implements Serializable {
+    private static final long serialVersionUID = -3374056834004694159L;
+
     @CsvBindByName(column = "merke")
     private String merke;
     @CsvBindByName(column = "type")

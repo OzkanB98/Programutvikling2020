@@ -19,10 +19,14 @@ public class LastKomponenterTask extends Task<Void> {
     }
 
     @Override
-    protected Void call() throws Exception {
-        Leser lastFil = new JOBJLeser();
-        lastFil.lesFraFil(fil, komponenter);
-
+    protected Void call(){
+        try {
+            Leser lastFil = new JOBJLeser();
+            lastFil.lesFraFil(fil, komponenter);
+            System.out.println("Task påkalt");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
         return null;
     }
 
