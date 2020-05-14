@@ -3,6 +3,7 @@ package org.openjfx.models;
 import com.opencsv.bean.CsvBindByName;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Komponent extends TilLagring implements Serializable {
     @CsvBindByName(column = "merke")
@@ -53,4 +54,10 @@ public class Komponent extends TilLagring implements Serializable {
                 "Pris: %s \n",
                 merke, type, produktKategori, produktDetaljer, pris);
     }
+
+    public boolean hovedkortKategori() {
+        return this.produktKategori.equals("Hovedkort");
+    }
+
+
 }

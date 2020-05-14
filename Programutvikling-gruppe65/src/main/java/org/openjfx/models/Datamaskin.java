@@ -10,6 +10,6 @@ public class Datamaskin extends TilLagring {
     public Datamaskin(ArrayList<Komponent> komponenter) {
         this.komponenter = komponenter;
     }
-
+    //
     //Evt bruker
 }
