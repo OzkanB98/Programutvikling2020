@@ -9,10 +9,12 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.openjfx.App;
+import org.openjfx.models.Datamaskin;
 import org.openjfx.models.Komponent;
 
 import java.io.*;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -81,6 +83,8 @@ public class KomponentListeController implements Initializable {
 
         komponentlisteTableView.getItems().setAll(readJOBJ("Komponenter.jobj"));
     }
+
+
 
 
 }
