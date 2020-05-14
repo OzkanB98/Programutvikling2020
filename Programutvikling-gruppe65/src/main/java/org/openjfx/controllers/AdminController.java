@@ -13,7 +13,6 @@ import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 import org.openjfx.App;
 import org.openjfx.models.Komponent;
-import org.openjfx.models.Komponenter;
 import org.openjfx.models.LastKomponenterTask;
 import org.openjfx.models.TilLagring;
 
