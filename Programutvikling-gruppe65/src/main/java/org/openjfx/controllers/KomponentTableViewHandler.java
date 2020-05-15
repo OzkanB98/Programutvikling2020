@@ -24,7 +24,7 @@ public class KomponentTableViewHandler {
         this.kategoriStringTableColumn = kategoriStringTableColumn;
         this.detaljerStringTableColumn = detaljerStringTableColumn;
         this.prisDoubleTableColumn = prisDoubleTableColumn;
-        settOppKolonner();
+        //settOppKolonner();
         //settOppTableView();
     }
 
