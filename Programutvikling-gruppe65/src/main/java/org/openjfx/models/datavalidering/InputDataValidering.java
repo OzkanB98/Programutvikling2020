@@ -30,11 +30,12 @@ public class InputDataValidering {
         return input;
     }
 
-    public String validerPris(String input) throws NullPointerException, DataFormatException {
+    public String validerPris(String input) throws NullPointerException {
         tomtInputFelt(input);
         input = input.trim();
 
-
+        CsvValidering csvValidering = new CsvValidering();
+        csvValidering.validerDouble(input);
 
         return input;
     }
