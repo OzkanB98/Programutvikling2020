@@ -34,9 +34,7 @@ public class InputDataValidering {
         tomtInputFelt(input);
         input = input.trim();
 
-        if (!input.matches("[0-9]+(.){2}+[0-9]+") || !input.matches("[0-9]+")) {
-            throw new DataFormatException("Pris må skrives i enten heltall eller desimalformat.");
-        }
+
 
         return input;
     }
