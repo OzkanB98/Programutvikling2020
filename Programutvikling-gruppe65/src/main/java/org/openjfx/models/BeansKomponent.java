@@ -1,22 +1,14 @@
 package org.openjfx.models;
 
-import com.opencsv.bean.CsvBindByName;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.scene.control.TableColumn;
 
 public class BeansKomponent {
-    private static final long serialVersionUID = -3374056834004694159L;
 
-    @CsvBindByName(column = "merke")
     private SimpleStringProperty merke;
-    @CsvBindByName(column = "type")
     private SimpleStringProperty type;
-    @CsvBindByName(column = "produktKategori")
     private SimpleStringProperty produktKategori;
-    @CsvBindByName(column = "produktDetaljer")
     private SimpleStringProperty produktDetaljer;
-    @CsvBindByName(column = "pris")
     private SimpleDoubleProperty pris;
 
     public BeansKomponent(String merke, String type, String produktKategori, String produktDetaljer, Double pris) {
@@ -27,23 +19,43 @@ public class BeansKomponent {
         this.pris = new SimpleDoubleProperty(pris);
     }
 
-    public String getMerke() { return merke.get(); }
+    public String getMerke() {
+        return merke.getValue();
+    }
 
-    public void setMerke(String merke) { this.merke.set(merke); }
+    public void setMerke(String merke) {
+        this.merke.set(merke);
+    }
 
-    public String getType() { return type.get(); }
+    public String getType() {
+        return type.getValue();
+    }
 
-    public void setType(String type) { this.type.set(type); }
+    public void setType(String type) {
+        this.type.set(type);
+    }
 
-    public String getProduktKategori() { return produktKategori.get(); }
+    public String getProduktKategori() {
+        return produktKategori.getValue();
+    }
 
-    public void setProduktKategori(String produktKategori) { this.produktKategori.set(produktKategori); }
+    public void setProduktKategori(String produktKategori) {
+        this.produktKategori.set(produktKategori);
+    }
 
-    public String getProduktDetaljer() { return produktDetaljer.get(); }
+    public String getProduktDetaljer() {
+        return produktDetaljer.getValue();
+    }
 
-    public void setProduktDetaljer(String produktDetaljer) { this.produktDetaljer.set(produktDetaljer); }
+    public void setProduktDetaljer(String produktDetaljer) {
+        this.produktDetaljer.set(produktDetaljer);
+    }
 
-    public Double getPris() { return pris.get(); }
+    public Double getPris() {
+        return pris.getValue();
+    }
 
-    public void setPris(Double pris) { this.pris.set(pris); }
+    public void setPris(Double pris) {
+        this.pris.set(pris);
+    }
 }

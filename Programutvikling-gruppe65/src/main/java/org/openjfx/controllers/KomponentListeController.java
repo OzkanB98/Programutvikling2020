@@ -9,103 +9,82 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.openjfx.App;
-import org.openjfx.models.BeansKomponent;
+import org.openjfx.models.Datamaskin;
 import org.openjfx.models.Komponent;
-import org.openjfx.models.TilLagring;
-import org.openjfx.models.filbehandling.CSVLeser;
-import org.openjfx.models.filbehandling.JOBJLeser;
 
 import java.io.*;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import static java.lang.Double.parseDouble;
 
 public class KomponentListeController implements Initializable {
 
-    @FXML private TableView<Komponent> komponentlisteTableView;
-    @FXML private TableColumn<Komponent, String> merkeKolonne, typeKolonne, kategoriKolonne, detaljerKolonne;
-    @FXML private TableColumn<Komponent, Double> prisKolonne;
+    @FXML private TableColumn merkeKolonne;
+    @FXML private TableColumn typeKolonne;
+    @FXML private TableColumn kategoriKolonne;
+    @FXML private TableColumn detaljerKolonne;
+    @FXML private TableColumn prisKolonne;
 
     @FXML
     private void handleAvbryt(ActionEvent event) throws IOException {
         App.setRoot("komponentMeny");
     }
 
+    @FXML
+    private TableView<Komponent> komponentlisteTableView;
+
+    private ObservableList<Komponent> list = FXCollections.observableArrayList();
+
+    public void attachTableView(TableView tv) {
+        tv.setItems(list);
+    }
+
+    public void addElement(Komponent obj) {
+        list.add(obj);
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle RB) {
-
-        merkeKolonne.setCellValueFactory(new PropertyValueFactory<>("merke"));
-        typeKolonne.setCellValueFactory(new PropertyValueFactory<>("type"));
-        kategoriKolonne.setCellValueFactory(new PropertyValueFactory<>("produktKategori"));
-        detaljerKolonne.setCellValueFactory(new PropertyValueFactory<>("produktDetaljer"));
-        prisKolonne.setCellValueFactory(new PropertyValueFactory<>("pris"));
-
-        try {
-            komponentlisteTableView.getItems().setAll(readJOBJ3());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        merkeKolonne.setCellValueFactory(new PropertyValueFactory("merke"));
+        typeKolonne.setCellValueFactory(new PropertyValueFactory("type"));
+        kategoriKolonne.setCellValueFactory(new PropertyValueFactory("kategori"));
+        detaljerKolonne.setCellValueFactory(new PropertyValueFactory("detaljer"));
+        prisKolonne.setCellValueFactory(new PropertyValueFactory("pris"));
     }
 
-    public ObservableList<Komponent> readJOBJ(String filepath) {
-        ObservableList<Komponent> dataList = FXCollections.observableArrayList();
+    public static List<Komponent> readJOBJ(String filepath) {
+
+        List<Komponent> dataList = FXCollections.observableArrayList();
+        String delimiter = ";";
+
+        BufferedReader br;
 
         try {
-            FileInputStream fileInputStream = new FileInputStream(filepath);
-            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-            dataList = (ObservableList<Komponent>) objectInputStream.readObject();
+            br = new BufferedReader(new FileReader(filepath));
 
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return dataList;
-    }
-
-    public ObservableList<Komponent> readJOBJ2(String filepath) {
-        ObservableList<Komponent> dataList = FXCollections.observableArrayList();
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(komponenterPath));
             String line;
             while ((line = br.readLine()) != null) {
-                String[] fields = line.split(";");
-                JOBJLeser jobjLeser = new JOBJLeser();
+                String[] fields = line.split(delimiter, -1);
 
-                Komponent komponent = new Komponent((fields[0]), fields[1], fields[2], fields[3], parseDouble(fields[4]));
+                Komponent komponent = new Komponent(fields[0], fields[1], fields[2], fields[3], parseDouble(fields[4]));
                 dataList.add(komponent);
-                jobjLeser.lesFraFil(new File("Komponenter1.jobj"), komponent);
             }
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return dataList;
     }
 
-    private static final String komponenterPath = "Komponenter1.jobj";
-
-    public ObservableList<Komponent> readJOBJ3() throws Exception {
-        ObservableList<Komponent> dataList = FXCollections.observableArrayList();
-        TilLagring tilLagring = new TilLagring();
-        JOBJLeser jobjLeser = new JOBJLeser();
-        jobjLeser.lesFraFil(new File(komponenterPath), tilLagring);
-        try {
-            Komponent komponent = new Komponent(merkeKolonne, typeKolonne, kategoriKolonne, detaljerKolonne, prisKolonne);
-            dataList.add(komponent);
-        } catch (Exception exception) {
-            exception.printStackTrace();
-        }
-        return dataList;
-    }
-
-    /*
     @FXML
     public void readJOBJ(ActionEvent event) {
+
         komponentlisteTableView.getItems().setAll(readJOBJ("Komponenter.jobj"));
     }
-*/
-/*
-    public void attachTableView(ObservableList<Komponent> list){
-        komponentlisteTableView.setItems(list);
-    }
- */
+
+
+
+
 }
