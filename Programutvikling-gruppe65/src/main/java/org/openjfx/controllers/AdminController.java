@@ -79,8 +79,8 @@ public class AdminController {
         File fil = new File("Komponenter.jobj");
         task = new LastKomponenterTask(fil, komponenter, () -> {
             liste = FXCollections.observableArrayList(konverterTilBeans(komponenter.getKomponentArrayList()));
-            handler = new KomponentTableViewHandler(komponentTableView, merkeKolonne, typeKolonne, kategoriKolonne, detaljerKolonne, prisKolonne);
-            handler.attachTableView(liste);
+            handler = new KomponentTableViewHandler(komponentTableView, merkeKolonne, typeKolonne, kategoriKolonne, detaljerKolonne, prisKolonne, liste);
+            handler.attachTableView(komponentTableView);
             System.out.println("Task utført");
         });
         System.out.println("Lastet inn komponenter fra admin controller");

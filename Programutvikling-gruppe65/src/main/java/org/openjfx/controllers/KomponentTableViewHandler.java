@@ -1,5 +1,6 @@
 package org.openjfx.controllers;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -17,13 +18,16 @@ public class KomponentTableViewHandler {
     private TableColumn<BeansKomponent, String> detaljerStringTableColumn;
     private TableColumn<BeansKomponent, Double> prisDoubleTableColumn;
 
-    public KomponentTableViewHandler(TableView<BeansKomponent> komponentTableView, TableColumn<BeansKomponent, String> merkeStringTableColumn, TableColumn<BeansKomponent, String> typeStringTableColumn, TableColumn<BeansKomponent, String> kategoriStringTableColumn, TableColumn<BeansKomponent, String> detaljerStringTableColumn, TableColumn<BeansKomponent, Double> prisDoubleTableColumn) {
+    private ObservableList<BeansKomponent> list;
+
+    public KomponentTableViewHandler(TableView<BeansKomponent> komponentTableView, TableColumn<BeansKomponent, String> merkeStringTableColumn, TableColumn<BeansKomponent, String> typeStringTableColumn, TableColumn<BeansKomponent, String> kategoriStringTableColumn, TableColumn<BeansKomponent, String> detaljerStringTableColumn, TableColumn<BeansKomponent, Double> prisDoubleTableColumn, ObservableList<BeansKomponent> list) {
         this.komponentTableView = komponentTableView;
         this.merkeStringTableColumn = merkeStringTableColumn;
         this.typeStringTableColumn = typeStringTableColumn;
         this.kategoriStringTableColumn = kategoriStringTableColumn;
         this.detaljerStringTableColumn = detaljerStringTableColumn;
         this.prisDoubleTableColumn = prisDoubleTableColumn;
+        this.list = FXCollections.observableArrayList();
         //settOppKolonner();
         //settOppTableView();
     }
@@ -50,8 +54,8 @@ public class KomponentTableViewHandler {
         kolonne.setCellValueFactory(new PropertyValueFactory<>(value));
     }
 
-    public void attachTableView(ObservableList<BeansKomponent> list){
-        komponentTableView.setItems(list);
+    public void attachTableView(TableView tv){
+        tv.setItems(list);
     }
 
 
