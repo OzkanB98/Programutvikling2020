@@ -8,8 +8,11 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import org.openjfx.models.Komponent;
+import org.openjfx.models.TilLagring;
 import org.openjfx.models.datavalidering.InputDataValidering;
+import org.openjfx.models.filbehandling.JOBJLeser;
 import org.openjfx.models.filbehandling.JOBJSkriver;
+import org.openjfx.models.filbehandling.Leser;
 import org.openjfx.models.filbehandling.Skriver;
 
 import java.io.File;
@@ -58,7 +61,11 @@ public class NyKomponentController {
             Komponent komponent = new Komponent(merke, type, kat, detaljer, pris);
             File fil = new File("Komponenter.jobj");
             filskriver = new JOBJSkriver();
-            filskriver.skrivTilFil(fil, komponent);
+            Leser leser = new JOBJLeser();
+            TilLagring liste = new TilLagring();
+            leser.lesFraFil(fil, liste);
+            liste.getKomponentArrayList().add(komponent);
+            filskriver.skrivTilFil(fil, liste);
         }catch (Exception e){
             e.printStackTrace();
         }

@@ -28,7 +28,7 @@ import java.util.concurrent.FutureTask;
 
 public class AdminController {
 
-    private TilLagring komponenter;
+    public static TilLagring komponenter;
     private Komponent komponent;
     private KomponentTableViewHandler handler;
     private ObservableList<BeansKomponent> liste;
@@ -52,7 +52,7 @@ public class AdminController {
         komponenter = new TilLagring();
         es = Executors.newFixedThreadPool(3);
         es.submit(execute);
-        //komponentTableView.refresh();
+        komponentTableView.refresh();
         System.out.println("admincontroller initialisert");
 
     }
@@ -76,7 +76,7 @@ public class AdminController {
     }
 
     private Task<Void> lastInnKomponenter(){
-        File fil = new File("Komponenter1.jobj");
+        File fil = new File("Komponenter.jobj");
         task = new LastKomponenterTask(fil, komponenter, () -> {
             liste = FXCollections.observableArrayList(konverterTilBeans(komponenter.getKomponentArrayList()));
             handler = new KomponentTableViewHandler(komponentTableView, merkeKolonne, typeKolonne, kategoriKolonne, detaljerKolonne, prisKolonne);
