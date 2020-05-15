@@ -16,27 +16,27 @@
          <children>
             <TableView prefHeight="285.0" prefWidth="520.0" fx:id="komponentlisteTableView">
               <columns>
-                  <TableColumn fx:id="merkeKolonne" prefWidth="59.0" text="Merke">
+                  <TableColumn fx:id="merkeKolonne" maxWidth="59.0" minWidth="59.0" text="Merke">
                      <cellValueFactory>
                         <PropertyValueFactory property="merke" />
                      </cellValueFactory>
                   </TableColumn>
-                  <TableColumn fx:id="typeKolonne" prefWidth="60.0" text="Type">
+                  <TableColumn fx:id="typeKolonne" maxWidth="100.0" minWidth="60.0" text="Type">
                      <cellValueFactory>
                         <PropertyValueFactory property="type" />
                      </cellValueFactory>
                   </TableColumn>
-                <TableColumn fx:id="kategoriKolonne" prefWidth="76.0" text="Kategori">
+                <TableColumn fx:id="kategoriKolonne" maxWidth="90.0" minWidth="76.0" text="Kategori">
                    <cellValueFactory>
                       <PropertyValueFactory property="produktKategori" />
                    </cellValueFactory>
                 </TableColumn>
-                <TableColumn fx:id="detaljerKolonne" prefWidth="265.0" text="Detaljer">
+                <TableColumn fx:id="detaljerKolonne" maxWidth="265.0" minWidth="265.0" text="Detaljer">
                    <cellValueFactory>
                       <PropertyValueFactory property="produktDetaljer" />
                    </cellValueFactory>
                 </TableColumn>
-                  <TableColumn fx:id="prisKolonne" minWidth="0.0" prefWidth="59.0" text="Pris">
+                  <TableColumn fx:id="prisKolonne" maxWidth="58.0" minWidth="58.0" text="Pris">
                      <cellValueFactory>
                         <PropertyValueFactory property="pris" />
                      </cellValueFactory>
