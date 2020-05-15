@@ -9,24 +9,24 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.controllers.HandlekurvController">
+<AnchorPane prefHeight="460.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.controllers.HandlekurvController">
    <children>
-       <TableView layoutY="46.0" prefHeight="330.0" prefWidth="600.0">
+       <TableView layoutY="46.0" prefHeight="330.0" prefWidth="690.0">
         <columns>
           <TableColumn prefWidth="147.0" text="Merke" />
-          <TableColumn prefWidth="229.0" text="Type" />
-            <TableColumn prefWidth="223.0" text="Pris" />
+          <TableColumn prefWidth="309.0" text="Type" />
+            <TableColumn prefWidth="233.0" text="Pris" />
         </columns>
       </TableView>
-      <Text layoutX="244.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Handlekurv" wrappingWidth="111.9999977350235">
+      <Text layoutX="289.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Handlekurv" wrappingWidth="111.9999977350235">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <Button defaultButton="true" layoutX="450.0" layoutY="409.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="136.0" text="Lagre konfigurasjon" />
-      <TextField layoutX="450.0" layoutY="383.0" prefHeight="25.0" prefWidth="136.0" text="Navngi konfigurasjon" />
+      <Button defaultButton="true" layoutX="540.0" layoutY="409.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="136.0" text="Lagre konfigurasjon" />
+      <TextField layoutX="540.0" layoutY="384.0" prefHeight="25.0" prefWidth="136.0" text="Navngi konfigurasjon" />
       <Button layoutX="14.0" layoutY="395.0" mnemonicParsing="false" onAction="#tilbakeKnapp" prefHeight="27.0" prefWidth="58.0" text="Tilbake" />
-      <Label layoutX="300.0" layoutY="386.0" text="Totalpris:">
+      <Label layoutX="387.0" layoutY="413.0" text="Totalpris:">
          <font>
             <Font size="14.0" />
          </font>
