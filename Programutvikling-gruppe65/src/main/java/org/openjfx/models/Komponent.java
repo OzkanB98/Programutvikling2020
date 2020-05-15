@@ -1,51 +1,52 @@
 package org.openjfx.models;
 
 import com.opencsv.bean.CsvBindByName;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleStringProperty;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public class Komponent extends TilLagring implements Serializable {
     private static final long serialVersionUID = -3374056834004694159L;
 
     @CsvBindByName(column = "merke")
-    private String merke;
+    private final SimpleStringProperty merke;
     @CsvBindByName(column = "type")
-    private String type;
+    private final SimpleStringProperty type;
     @CsvBindByName(column = "produktKategori")
-    private String produktKategori;
+    private final SimpleStringProperty produktKategori;
     @CsvBindByName(column = "produktDetaljer")
-    private String produktDetaljer;
+    private final SimpleStringProperty produktDetaljer;
     @CsvBindByName(column = "pris")
-    private Double pris;
+    private final SimpleDoubleProperty pris;
 
     public Komponent(String merke, String type, String produktKategori, String produktDetaljer, Double pris) {
-        this.merke = merke;
-        this.type = type;
-        this.produktKategori = produktKategori;
-        this.produktDetaljer = produktDetaljer;
-        this.pris = pris;
+        this.merke = new SimpleStringProperty(merke);
+        this.type = new SimpleStringProperty(type);
+        this.produktKategori = new SimpleStringProperty(produktKategori);
+        this.produktDetaljer = new SimpleStringProperty(produktDetaljer);
+        this.pris = new SimpleDoubleProperty(pris);
     }
 
-    public String getMerke() { return merke; }
+    public String getMerke() { return merke.get(); }
 
-    public void setMerke(String merke) { this.merke = merke; }
+    public void setMerke(String merke) { this.merke.set(merke); }
 
-    public String getType() { return type; }
+    public String getType() { return type.get(); }
 
-    public void setType(String type) { this.type = type; }
+    public void setType(String type) { this.type.set(type); }
 
-    public String getProduktKategori() { return produktKategori; }
+    public String getProduktKategori() { return produktKategori.get(); }
 
-    public void setProduktKategori(String produktKategori) { this.produktKategori = produktKategori; }
+    public void setProduktKategori(String produktKategori) { this.produktKategori.set(produktKategori); }
 
-    public String getProduktDetaljer() { return produktDetaljer; }
+    public String getProduktDetaljer() { return produktDetaljer.get(); }
 
-    public void setProduktDetaljer(String produktDetaljer) { this.produktDetaljer = produktDetaljer; }
+    public void setProduktDetaljer(String produktDetaljer) { this.produktDetaljer.set(produktDetaljer); }
 
-    public Double getPris() { return pris; }
+    public Double getPris() { return pris.get(); }
 
-    public void setPris(Double pris) { this.pris = pris; }
+    public void setPris(Double pris) { this.pris.set(pris); }
 
     public String toString() {
         return String.format("Produktinformasjon: \n" +
