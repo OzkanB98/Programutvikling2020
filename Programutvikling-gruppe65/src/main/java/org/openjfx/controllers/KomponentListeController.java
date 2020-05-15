@@ -73,7 +73,7 @@ public class KomponentListeController implements Initializable {
 
                 Komponent komponent = new Komponent((fields[0]), fields[1], fields[2], fields[3], parseDouble(fields[4]));
                 dataList.add(komponent);
-                jobjLeser.lesFraFil(new File("Komponenter1.jobj"), komponent);
+                jobjLeser.lesFraFil(new File("Komponenter.jobj"), komponent);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -81,7 +81,7 @@ public class KomponentListeController implements Initializable {
         return dataList;
     }
 
-    private static final String komponenterPath = "Komponenter1.jobj";
+    private static final String komponenterPath = "Komponenter.jobj";
 
     public ObservableList<Komponent> readJOBJ3() throws Exception {
         ObservableList<Komponent> dataList = FXCollections.observableArrayList();
