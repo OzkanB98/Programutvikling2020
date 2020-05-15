@@ -28,7 +28,7 @@ public class KomponentTableViewHandler {
         this.detaljerStringTableColumn = detaljerStringTableColumn;
         this.prisDoubleTableColumn = prisDoubleTableColumn;
         this.list = FXCollections.observableArrayList();
-        //settOppKolonner();
+        settOppKolonner();
         //settOppTableView();
     }
 
