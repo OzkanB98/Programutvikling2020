@@ -23,7 +23,7 @@ public class JOBJLeser implements Leser {
             TilLagring komponenter = (TilLagring) objectInputStream.readObject();
             objectInputStream.close();
             obj.setKomponentArrayList(komponenter.getKomponentArrayList());
-            
+
         } catch (FileNotFoundException fnfe){
             System.out.println("Ingen fil funnet");
         }

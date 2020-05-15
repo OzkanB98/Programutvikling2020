@@ -48,7 +48,7 @@ public class AdminController {
         komponenter = new TilLagring();
         es = Executors.newFixedThreadPool(3);
         es.submit(execute);
-        komponentTableView.refresh();
+        //komponentTableView.refresh();
         System.out.println("admincontroller initialisert");
 
     }

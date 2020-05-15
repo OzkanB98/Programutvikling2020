@@ -23,12 +23,17 @@ public class KomponentTableViewHandler {
         this.kategoriStringTableColumn = kategoriStringTableColumn;
         this.detaljerStringTableColumn = detaljerStringTableColumn;
         this.prisDoubleTableColumn = prisDoubleTableColumn;
-        settOppTableView();
+        //settOppKolonner();
+        //settOppTableView();
     }
 
     private void settOppTableView(){
-        komponentTableView.getColumns().setAll(merkeStringTableColumn, typeStringTableColumn, kategoriStringTableColumn, detaljerStringTableColumn, prisDoubleTableColumn);
-        settOppKolonner();
+        komponentTableView.getColumns().add(merkeStringTableColumn);
+        komponentTableView.getColumns().add(typeStringTableColumn);
+        komponentTableView.getColumns().add(kategoriStringTableColumn);
+        komponentTableView.getColumns().add(detaljerStringTableColumn);
+        komponentTableView.getColumns().add(prisDoubleTableColumn);
+
     }
 
     private void settOppKolonner(){
