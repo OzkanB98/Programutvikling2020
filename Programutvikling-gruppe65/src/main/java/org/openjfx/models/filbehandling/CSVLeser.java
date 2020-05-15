@@ -19,14 +19,12 @@ import java.util.List;
 
 public class CSVLeser implements Leser {
     CsvValidering csvValidering;
-    TilLagring komponenter;
 
     @Override
     public void lesFraFil(File file, TilLagring obj) throws Exception {
-        Thread.sleep(2000);
         tomFil(file);
-        komponenter = new TilLagring();
-        komponenter.setKomponentArrayList(new ArrayList<>());
+        obj = new TilLagring();
+        obj.setKomponentArrayList(new ArrayList<>());
         csvValidering = new CsvValidering();
 
         CSVParser csvParser = new CSVParserBuilder()
@@ -45,7 +43,7 @@ public class CSVLeser implements Leser {
             validerData(rad, lineNumber);
             Komponent komponent = new Komponent(rad[0], rad[1], rad[2], rad[3], Double.valueOf(rad[4]));
 
-            komponenter.getKomponentArrayList().add(komponent);
+            obj.getKomponentArrayList().add(komponent);
         }
         csvReader.close();
     }
@@ -59,8 +57,8 @@ public class CSVLeser implements Leser {
         }
     }
 
-    private void validerData(String[] rad, int line) throws CsvWrongDataTypeException, CsvNullValueException {
-        for (int i = 0; i < 4; i++) {
+    private void validerData(String[] rad, int line) throws CsvNullValueException, CsvWrongDataTypeException {
+        for (int i = 0; i < 5; i++) {
             if ("".equals(rad[i])) {
                 throw new CsvNullValueException(line);
             }

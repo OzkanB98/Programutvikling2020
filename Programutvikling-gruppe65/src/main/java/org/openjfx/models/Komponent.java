@@ -28,9 +28,6 @@ public class Komponent extends TilLagring implements Serializable {
         this.pris = pris;
     }
 
-    public Komponent(TableColumn<Komponent, String> merkeKolonne, TableColumn<Komponent, String> typeKolonne, TableColumn<Komponent, String> kategoriKolonne, TableColumn<Komponent, String> detaljerKolonne, TableColumn<Komponent, Double> prisKolonne) {
-    }
-
     public String getMerke() { return merke; }
 
     public void setMerke(String merke) { this.merke = merke; }

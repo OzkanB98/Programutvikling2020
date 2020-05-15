@@ -52,8 +52,8 @@ public class App extends Application {
         CSVSkriver csvSkriver = new CSVSkriver();
         TilLagring tilLagring = new TilLagring();
 
-        Komponent komponent = new Komponent("Asus", "GTX1080", "Kategori", "Detaljer", 2500.0);
-        Komponent komponent2 = new Komponent("Asus", "GTX10801", "Kategori", "Detaljer", 2500.0);
+        Komponent komponent = new Komponent("Asus", "GTX1080", "Kategori", "Detaljer", 2500d);
+        Komponent komponent2 = new Komponent("Asus", "GTX10801", "Kategori", "Detaljer", 2500d);
         tilLagring.getKomponentArrayList().add(komponent);
         tilLagring.getKomponentArrayList().add(komponent2);
         csvSkriver.skrivTilFil(new File("Komponenter.csv"), tilLagring);

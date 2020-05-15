@@ -1,5 +1,9 @@
 package org.openjfx.controllers;
 
+import com.opencsv.CSVParser;
+import com.opencsv.CSVParserBuilder;
+import com.opencsv.CSVReader;
+import com.opencsv.CSVReaderBuilder;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,7 +13,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.openjfx.App;
-import org.openjfx.models.BeansKomponent;
 import org.openjfx.models.Komponent;
 import org.openjfx.models.TilLagring;
 import org.openjfx.models.filbehandling.CSVLeser;
@@ -22,6 +25,9 @@ import java.util.ResourceBundle;
 import static java.lang.Double.parseDouble;
 
 public class KomponentListeController implements Initializable {
+
+    private static final String komponenterPathJOBJ = "Komponenter.jobj";
+    private static final String komponenterPathCSV = "Komponenter.csv";
 
     @FXML private TableView<Komponent> komponentlisteTableView;
     @FXML private TableColumn<Komponent, String> merkeKolonne, typeKolonne, kategoriKolonne, detaljerKolonne;
@@ -42,60 +48,58 @@ public class KomponentListeController implements Initializable {
         prisKolonne.setCellValueFactory(new PropertyValueFactory<>("pris"));
 
         try {
-            komponentlisteTableView.getItems().setAll(readJOBJ3());
+            komponentlisteTableView.getItems().setAll(readCSV());
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public ObservableList<Komponent> readJOBJ(String filepath) {
+    public ObservableList<Komponent> readCSV() throws Exception {
         ObservableList<Komponent> dataList = FXCollections.observableArrayList();
 
-        try {
-            FileInputStream fileInputStream = new FileInputStream(filepath);
-            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-            dataList = (ObservableList<Komponent>) objectInputStream.readObject();
-
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return dataList;
-    }
-
-    public ObservableList<Komponent> readJOBJ2(String filepath) {
-        ObservableList<Komponent> dataList = FXCollections.observableArrayList();
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(komponenterPath));
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] fields = line.split(";");
-                JOBJLeser jobjLeser = new JOBJLeser();
-
-                Komponent komponent = new Komponent((fields[0]), fields[1], fields[2], fields[3], parseDouble(fields[4]));
-                dataList.add(komponent);
-                jobjLeser.lesFraFil(new File("Komponenter.jobj"), komponent);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return dataList;
-    }
-
-    private static final String komponenterPath = "Komponenter.jobj";
-
-    public ObservableList<Komponent> readJOBJ3() throws Exception {
-        ObservableList<Komponent> dataList = FXCollections.observableArrayList();
-        TilLagring tilLagring = new TilLagring();
-        JOBJLeser jobjLeser = new JOBJLeser();
-        jobjLeser.lesFraFil(new File(komponenterPath), tilLagring);
-        try {
-            Komponent komponent = new Komponent(merkeKolonne, typeKolonne, kategoriKolonne, detaljerKolonne, prisKolonne);
+        CSVParser csvParser = new CSVParserBuilder()
+                .withSeparator(';')
+                .withIgnoreQuotations(true)
+                .build();
+        CSVReader csvReader = new CSVReaderBuilder(new FileReader(komponenterPathCSV))
+                .withCSVParser(csvParser)
+                .withSkipLines(0)
+                .build();
+        int lineNumber = 0;
+        String[] rad;
+            while ((rad = csvReader.readNext()) != null) {
+            lineNumber++;
+            Komponent komponent = new Komponent(rad[0], rad[1], rad[2], rad[3], Double.valueOf(rad[4]));
             dataList.add(komponent);
+        }
+            return dataList;
+    }
+
+    /*
+    public ObservableList<Komponent> readJOBJ() throws Exception {
+        ObservableList<Komponent> dataList = FXCollections.observableArrayList();
+        try {
+            TilLagring tilLagring = new TilLagring();
+            JOBJLeser jobjLeser = new JOBJLeser();
+            jobjLeser.lesFraFil(new File(komponenterPathJOBJ), tilLagring);
+            BufferedReader br = new BufferedReader(new FileReader(komponenterPathJOBJ));
+
+            int lineNumber = 0;
+            String line;
+            while((line = br.readLine()) != null) {
+                lineNumber++;
+                String[] fields = line.split(";");
+                Komponent komponent = new Komponent((fields[0]), fields[1], fields[2], fields[3], Double.valueOf(fields[4]));
+                dataList.add(komponent);
+            }
         } catch (Exception exception) {
             exception.printStackTrace();
         }
         return dataList;
     }
+
+     */
+
 
     /*
     @FXML
