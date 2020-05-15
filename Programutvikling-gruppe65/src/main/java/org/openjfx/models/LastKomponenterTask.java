@@ -19,19 +19,22 @@ public class LastKomponenterTask extends Task<Void> {
     }
 
     @Override
-    protected Void call(){
+    protected Void call() throws InterruptedException{
         try {
             Leser lastFil = new JOBJLeser();
+            //komponenter = new TilLagring();
             lastFil.lesFraFil(fil, komponenter);
             System.out.println("Task påkalt");
         }catch(Exception e){
             e.printStackTrace();
         }
+        Thread.sleep(3000);
         return null;
     }
 
     @Override
     protected void succeeded() {
+        //System.out.println(komponenter.getKomponentArrayList());
         runnable.run();
     }
 }

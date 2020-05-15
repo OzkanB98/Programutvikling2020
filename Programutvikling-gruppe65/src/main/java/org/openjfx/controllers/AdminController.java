@@ -20,16 +20,14 @@ import org.openjfx.models.TilLagring;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.FutureTask;
+
 
 public class AdminController {
 
-    public static TilLagring komponenter;
-    private Komponent komponent;
+    private TilLagring komponenter;
     private KomponentTableViewHandler handler;
     private ObservableList<BeansKomponent> liste;
     private Task<Void> task;
@@ -48,8 +46,9 @@ public class AdminController {
     @FXML
     public void initialize(){
 
+
         Task<Void> execute = this.lastInnKomponenter();
-        komponenter = new TilLagring();
+
         es = Executors.newFixedThreadPool(3);
         es.submit(execute);
         komponentTableView.refresh();
@@ -75,14 +74,20 @@ public class AdminController {
         stage.show();
     }
 
+    @FXML
     private Task<Void> lastInnKomponenter(){
         File fil = new File("Komponenter.jobj");
+        komponenter = new TilLagring();
         task = new LastKomponenterTask(fil, komponenter, () -> {
+
             liste = FXCollections.observableArrayList(konverterTilBeans(komponenter.getKomponentArrayList()));
             handler = new KomponentTableViewHandler(komponentTableView, merkeKolonne, typeKolonne, kategoriKolonne, detaljerKolonne, prisKolonne, liste);
+            System.out.println(komponenter.getKomponentArrayList());
             handler.attachTableView(komponentTableView);
             System.out.println("Task utført");
+            komponentTableView.refresh();
         });
+
         System.out.println("Lastet inn komponenter fra admin controller");
         return task;
     }
