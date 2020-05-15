@@ -17,31 +17,16 @@
       </Text>
       <TableView fx:id="komponentTableView" layoutY="45.0" maxHeight="341.0" maxWidth="690.0" prefHeight="341.0" prefWidth="690.0">
         <columns>
-          <TableColumn fx:id="merkeKolonne" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" text="Merke" >
-              <cellValueFactory>
-                  <PropertyValueFactory property="merke" />
-              </cellValueFactory>
-          </TableColumn>
-            <TableColumn fx:id="typeKolonne" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" text="Type" >
-                <cellValueFactory>
-                    <PropertyValueFactory property="type" />
-                </cellValueFactory>
-            </TableColumn>
-          <TableColumn fx:id="kategoriKolonne" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" text="Kategori" >
-              <cellValueFactory>
-                  <PropertyValueFactory property="produktKategori" />
-              </cellValueFactory>
-          </TableColumn>
-            <TableColumn fx:id="detaljerKolonne" maxWidth="295.0" minWidth="295.0" prefWidth="295.0" text="Detaljer" >
-                <cellValueFactory>
-                    <PropertyValueFactory property="produktDetaljer" />
-                </cellValueFactory>
-            </TableColumn>
-            <TableColumn fx:id="prisKolonne" maxWidth="84.0" minWidth="84.0" prefWidth="84.0" text="Pris" >
-                <cellValueFactory>
-                    <PropertyValueFactory property="pris" />
-                </cellValueFactory>
-            </TableColumn>
+          <TableColumn fx:id="merkeKolonne" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" text="Merke" />
+
+            <TableColumn fx:id="typeKolonne" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" text="Type" />
+
+          <TableColumn fx:id="kategoriKolonne" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" text="Kategori" />
+
+            <TableColumn fx:id="detaljerKolonne" maxWidth="295.0" minWidth="295.0" prefWidth="295.0" text="Detaljer" />
+
+            <TableColumn fx:id="prisKolonne" maxWidth="84.0" minWidth="84.0" prefWidth="84.0" text="Pris" />
+
         </columns>
       </TableView>
       <Button defaultButton="true" layoutX="510.0" layoutY="402.0" mnemonicParsing="false" onAction="#leggTilKnapp" prefHeight="45.0" prefWidth="166.0" text="+ Legg til ny komponent" />

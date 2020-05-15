@@ -4,26 +4,27 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.openjfx.models.BeansKomponent;
 import org.openjfx.models.Komponent;
 
 public class KomponentTableViewHandler {
 
-    private TableView<Komponent> komponentTableView;
+    private TableView<BeansKomponent> komponentTableView;
 
-    private TableColumn<Komponent, String> merkeStringTableColumn;
-    private TableColumn<Komponent, String> typeStringTableColumn;
-    private TableColumn<Komponent, String> kategoriStringTableColumn;
-    private TableColumn<Komponent, String> detaljerStringTableColumn;
-    private TableColumn<Komponent, Double> prisDoubleTableColumn;
+    private TableColumn<BeansKomponent, String> merkeStringTableColumn;
+    private TableColumn<BeansKomponent, String> typeStringTableColumn;
+    private TableColumn<BeansKomponent, String> kategoriStringTableColumn;
+    private TableColumn<BeansKomponent, String> detaljerStringTableColumn;
+    private TableColumn<BeansKomponent, Double> prisDoubleTableColumn;
 
-    public KomponentTableViewHandler(TableView<Komponent> komponentTableView, TableColumn<Komponent, String> merkeStringTableColumn, TableColumn<Komponent, String> typeStringTableColumn, TableColumn<Komponent, String> kategoriStringTableColumn, TableColumn<Komponent, String> detaljerStringTableColumn, TableColumn<Komponent, Double> prisDoubleTableColumn) {
+    public KomponentTableViewHandler(TableView<BeansKomponent> komponentTableView, TableColumn<BeansKomponent, String> merkeStringTableColumn, TableColumn<BeansKomponent, String> typeStringTableColumn, TableColumn<BeansKomponent, String> kategoriStringTableColumn, TableColumn<BeansKomponent, String> detaljerStringTableColumn, TableColumn<BeansKomponent, Double> prisDoubleTableColumn) {
         this.komponentTableView = komponentTableView;
         this.merkeStringTableColumn = merkeStringTableColumn;
         this.typeStringTableColumn = typeStringTableColumn;
         this.kategoriStringTableColumn = kategoriStringTableColumn;
         this.detaljerStringTableColumn = detaljerStringTableColumn;
         this.prisDoubleTableColumn = prisDoubleTableColumn;
-        //settOppKolonner();
+        settOppKolonner();
         //settOppTableView();
     }
 
@@ -45,11 +46,11 @@ public class KomponentTableViewHandler {
         System.out.println("Setter cell value factory fra tableViewHandler");
     }
 
-    private void cellValueFactory(TableColumn<Komponent, String> kolonne, String value){
+    private void cellValueFactory(TableColumn<BeansKomponent, String> kolonne, String value){
         kolonne.setCellValueFactory(new PropertyValueFactory<>(value));
     }
 
-    public void attachTableView(ObservableList<Komponent> list){
+    public void attachTableView(ObservableList<BeansKomponent> list){
         komponentTableView.setItems(list);
     }
 
