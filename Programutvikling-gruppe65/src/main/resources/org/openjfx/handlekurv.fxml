@@ -9,8 +9,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-
 <AnchorPane prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.controllers.HandlekurvController">
    <children>
        <TableView layoutY="46.0" prefHeight="330.0" prefWidth="690.0">
@@ -27,7 +25,7 @@
       </Text>
       <Button defaultButton="true" layoutX="529.0" layoutY="413.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="136.0" text="Lagre konfigurasjon" />
       <TextField layoutX="529.0" layoutY="388.0" prefHeight="25.0" prefWidth="136.0" text="Navngi konfigurasjon" />
-      <Button layoutX="24.0" layoutY="361.0" mnemonicParsing="false" onAction="#tilbakeKnapp" prefHeight="27.0" prefWidth="58.0" text="Tilbake" />
+      <Button layoutX="14.0" layoutY="400.0" mnemonicParsing="false" onAction="#tilbakeKnapp" prefHeight="27.0" prefWidth="58.0" text="Tilbake" />
       <Label layoutX="387.0" layoutY="413.0" text="Totalpris:">
          <font>
             <Font size="14.0" />
