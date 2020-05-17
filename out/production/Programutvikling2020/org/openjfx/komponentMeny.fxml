@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.controllers.KomponentMenyController">
+   <children>
+      <Text layoutX="27.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tilpass din nye PC">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <Text layoutX="309.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valgfritt tilleggsutstyr">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <Button defaultButton="true" layoutX="480.0" layoutY="359.0" mnemonicParsing="false" onAction="#byttTilHandlekurv" text="Gå til handlekurv" />
+      <VBox layoutX="27.0" layoutY="65.0" prefHeight="287.0" prefWidth="282.0">
+         <children>
+            <Label prefHeight="38.0" prefWidth="206.0">
+               <graphic>
+                  <Hyperlink onAction="#velgKomponent" text="Velg hovedkort" />
+               </graphic>
+            </Label>
+            <Label prefHeight="38.0" prefWidth="206.0">
+               <graphic>
+                  <Hyperlink onAction="#velgKomponent" text="Velg prosessor" />
+               </graphic>
+            </Label>
+            <Label prefHeight="38.0" prefWidth="206.0">
+               <graphic>
+                  <Hyperlink onAction="#velgKomponent" text="Velg skjermkort" />
+               </graphic>
+            </Label>
+            <Label prefHeight="38.0" prefWidth="206.0">
+               <graphic>
+                  <Hyperlink onAction="#velgKomponent" text="Velg strømforsyning" />
+               </graphic>
+            </Label>
+            <Label prefHeight="38.0" prefWidth="206.0">
+               <graphic>
+                  <Hyperlink onAction="#velgKomponent" text="Velg lagring" />
+               </graphic>
+            </Label>
+            <Label prefHeight="38.0" prefWidth="206.0">
+               <graphic>
+                  <Hyperlink onAction="#velgKomponent" text="Velg kjøling" />
+               </graphic>
+            </Label>
+            <Label prefHeight="38.0" prefWidth="206.0">
+               <graphic>
+                  <Hyperlink onAction="#velgKomponent" text="Velg RAM" />
+               </graphic>
+            </Label>
+            <Label prefHeight="38.0" prefWidth="206.0">
+               <graphic>
+                  <Hyperlink onAction="#velgKomponent" text="Velg kabinett" />
+               </graphic>
+            </Label>
+         </children>
+      </VBox>
+      <VBox layoutX="309.0" layoutY="65.0" prefHeight="105.0" prefWidth="100.0">
+         <children>
+            <Label prefHeight="38.0" prefWidth="206.0">
+               <graphic>
+                  <Hyperlink onAction="#velgKomponent" text="Velg skjerm" />
+               </graphic>
+            </Label>
+            <Label prefHeight="38.0" prefWidth="206.0">
+               <graphic>
+                  <Hyperlink onAction="#velgKomponent" text="Velg tastatur" />
+               </graphic>
+            </Label>
+            <Label prefHeight="38.0" prefWidth="100.0">
+               <graphic>
+                  <Hyperlink onAction="#velgKomponent" text="Velg mus" />
+               </graphic>
+            </Label>
+         </children>
+      </VBox>
+      <Button layoutX="27.0" layoutY="359.0" mnemonicParsing="false" onAction="#tilbakeKnapp" text="Tilbake" />
+
+
+   </children>
+</AnchorPane>
